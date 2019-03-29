@@ -41,7 +41,7 @@ if(nick == "DEFAULT"){
 }
 
 #Functions #####################################################################
-source("https://drive.google.com/uc?export=download&id=1IpatZ2_AK7Bwor6BzSpYyi6UeCfiA5xx")
+source("https://raw.githubusercontent.com/SchwartzLab/mazter_mine/master/helperFunctions.R")
 
 # Packages #####################################################################
 #CRAN packages
