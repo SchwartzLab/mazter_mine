@@ -8,7 +8,10 @@ An R script with helper functions
 
 ### bam2ReadEnds.R
 
-This is a script that should be used as a command line tool in a UNIX providing the necessary arguments.
+This is a script that should be used as a command line tool in a UNIX system, providing the necessary arguments.
+
+e.g.
+Rscript bam2ReadEnds.R -i Sample1.bam -g geneAnnot.bed
 
 ```sh
 Rscript bam2ReadEnds.R --help
@@ -35,11 +38,6 @@ Options:
                 Show this help message and exit
 
 ```
-
-Dependencies:
-
-* Bedtools (tested using samtools 1.3.1)
-* SAMtools (tested using bedtools v2.26.0)
 
 ### mazter_mine.R
 
@@ -84,3 +82,8 @@ Options:
                 Show this help message and exit
 
 ```
+
+Dependencies:
+
+* Bedtools (tested using samtools 1.3.1)
+* SAMtools (tested using bedtools v2.26.0)
