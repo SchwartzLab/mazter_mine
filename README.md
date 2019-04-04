@@ -1,29 +1,33 @@
 # MAZTER-mine
 
-Mazter_mine is a computational pipeline to analize MAZTER-seq derived data, 
+MAZTER-mine is a computational pipeline to analize MAZTER-seq derived data, 
 a methodology that profiles m6A quantitatively across transcriptomes in a 
 single-base manner.
 
-Our preprint presenting MAZTER-seq, its capabilities and biological insigth 
-derived from it can be found in [biorxiv](https://www.biorxiv.org/content/10.1101/571679v1).
+Our preprint presenting MAZTER-seq, its capabilities and biological insigths 
+derived from its use can be found in [biorxiv](https://www.biorxiv.org/content/10.1101/571679v1).
 
 This repository holds three files to run the MAZTER-seq computational pipeline:
 
 ### helperFunctions.R
 
 An R script with helper functions. For an easier handling this functions are 
-loaded from the online version when running bam2ReadEnds.R and mazter_seq.R.
+loaded from the online repository when running bam2ReadEnds.R and mazter_seq.R.
 If you want to run these while offline, please change the path in the source() 
 function at the beginning of the main programs to your local copy of 
 "helperFunctions.R".
 
 ### bam2ReadEnds.R
 
-This is a script that should be used as a command line tool in a UNIX system, providing the necessary arguments.
-Due to the size of the file thi
+This is an R script that should be used as a command line tool in a UNIX system, 
+providing the necessary arguments.
 
 e.g.
 Rscript bam2ReadEnds.R -i Sample1.bam -g geneAnnot.bed
+
+Its main input is an **unsorted** alignment file in BAM format and a gene 
+annotation in [BED-12](https://genome.ucsc.edu/FAQ/FAQformat.html#format1) format. 
+This processing step may be lengthy, depending on computational power and file size.
 
 ```sh
 Rscript bam2ReadEnds.R --help
