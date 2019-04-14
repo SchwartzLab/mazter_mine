@@ -11,17 +11,6 @@ substrRight <- function(x, n){
   substr(x, nchar(x)-n+1, nchar(x))
 }
 
-# List files in work dir that match pattern pat
-listFilePatt <- function(pattern, path = "."){
-  files <- list.files(path)[grep(pattern = pattern, x = list.files(path))]
-  return(files)
-}
-
-# Object size
-oSize <- function(x){
-  print(object.size(x), units = "auto") 
-}
-
 # Turns a character matrix into a dataframe more "smartly"
 asDataFrame <- function(x){
   tmpCol <- colnames(x)
