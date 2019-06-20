@@ -4,8 +4,9 @@ MAZTER-mine is a computational pipeline to analize MAZTER-seq derived data,
 a methodology that profiles m6A quantitatively across transcriptomes in a 
 single-base manner.
 
-This repository holds three programs to run the MAZTER-seq computational pipeline,
-and an additional folder which includes a tutorial and test data to run it:
+This repository holds two programs to run the MAZTER-seq computational pipeline,
+a set of helper functions, and an additional folder which includes a tutorial
+and test data to run it:
 
 ### helperFunctions.R
 
