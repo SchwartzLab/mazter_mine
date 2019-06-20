@@ -3,7 +3,7 @@ MAZTER\_mine example run and downstream analysis
 
 In this folder there are 3 starting files:
 
--   **test\_KO1.bam and test\_WT1**: Two alignment files which contain a subset of our MAZTER-seq derived data in mouse embryonic stem cells (mESC). KO1 stands for sample\_1 in METTL3-KO and WT1 for sample\_1 in control condition.
+-   **test\_KO1.bam and test\_WT1.bam**: Two alignment files which contain a subset of our MAZTER-seq derived data in mouse embryonic stem cells (mESC). KO1 stands for sample\_1 in METTL3-KO and WT1 for sample\_1 in control condition.
 -   **geneAnnot.bed**: A BED-12 file which is a subset of the UCSC mouse gene annotation that contains genes with high confidence m6A sites.
 
 The following commands will run the mazter\_mine pipeline in the test files (you will have to update `path/to/file` with the path to your local copy of the mouse genome file in FASTA format):
