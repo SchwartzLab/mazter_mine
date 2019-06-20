@@ -99,7 +99,7 @@ Options:
 
 ```
 
-## tutorial
+### tutorial
 
 An example MAZTER-mine run with test data.
 
