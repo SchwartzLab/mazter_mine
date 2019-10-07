@@ -1,8 +1,9 @@
 # MAZTER-mine
 
-MAZTER-mine is a computational pipeline to analize MAZTER-seq derived data, 
-a methodology that profiles m6A quantitatively across transcriptomes in a 
-single-base manner.
+MAZTER-mine is a computational pipeline to analize MAZTER-seq 
+[Garcia-Campos et al., 2019](https://www.cell.com/cell/fulltext/S0092-8674(19)30676-2) 
+derived data, a methodology that profiles m6A quantitatively across transcriptomes 
+with a single-base resolution.
 
 This repository holds two programs to run the MAZTER-seq computational pipeline,
 a set of helper functions, and an additional folder which includes a tutorial
@@ -35,7 +36,7 @@ Usage: bam2ReadEnds.R [options]
 
 Options:
         -i CHARACTER, --BAMfile=CHARACTER
-                BAM alignment file
+                UNSORTED_BAM alignment file
 
         -g CHARACTER, --geneAnnotation=CHARACTER
                 Gene annotation file in BED-12 format
@@ -56,7 +57,7 @@ Options:
 
 ### mazter_mine.R
 
-This is a program that should be used as a command line tool in a UNIX providing the necessary arguments.
+This is a program that should be used as a command line tool in a UNIX system, providing the necessary arguments.
 
 mazter_mine's main input is the ".Rdata" file output from the bam2ReadEnds.R program, 
 and it outputs a QC report and a cleavage efficiency table which can be used for 
