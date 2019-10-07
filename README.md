@@ -1,7 +1,7 @@
 # MAZTER-mine
 
 MAZTER-mine is a computational pipeline to analize MAZTER-seq 
-[Garcia-Campos et al., 2019](https://www.cell.com/cell/fulltext/S0092-8674(19)30676-2) 
+([Garcia-Campos et al., 2019](https://www.cell.com/cell/fulltext/S0092-8674(19)30676-2)) 
 derived data, a methodology that profiles m6A quantitatively across transcriptomes 
 with a single-base resolution.
 
