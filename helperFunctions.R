@@ -622,5 +622,5 @@ ggScattLinePlot <- function(x, y, title = "", xLab = "", yLab = "", alpha = 1){
 
 
 # Load/install dependencies
-CRAN_packs <- c("magrittr", "parallel", "optparse", "plyr", "ggplot2", "grid", "gtools", "reshape2", "EnvStats")
+CRAN_packs <- c("magrittr", "parallel", "optparse", "plyr", "ggplot2", "grid", "gtools", "reshape2")
 sapply(CRAN_packs, function(x) installLoad_CRAN(x))
