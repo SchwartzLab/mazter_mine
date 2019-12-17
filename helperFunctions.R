@@ -1,4 +1,4 @@
-# Helper Functions for MAZTER-seq ############################################################
+# Helper Functions for MAZTER-seq ##############################################
 # Author: Miguel Angel Garcia-Campos https://github.com/AngelCampos ############
 
 # Write table with TAB separated files standards
@@ -41,7 +41,8 @@ readBED <- function(fileName, idAsRowNames = T){
 # Function write bed file (Input = base1, output = base-0)
 writeBED <- function(bed, filename){
     bed[,2] <- bed[,2] -1
-    write.table(bed, filename, sep= "\t", col.names = F, row.names = F, quote = F)
+    write.table(bed, filename, sep= "\t", col.names = F, row.names = F,
+    quote = F)
 }
 
 
@@ -76,7 +77,8 @@ equal <- function(x,y, value = F){
     if(value){x[x == y]}else if(!value){x == y}
 }
 
-# Function to go up along a vector until finding lower values, with a threshold of fails going up
+# Function to go along a vector until decreasing values are found, with a fails 
+# threshold 
 stepWiseUp <- function(x, failThr, start = 2){
     best <- start
     fails <- 0
@@ -103,9 +105,9 @@ secAxisPlot <- function(xAxis, yAxis, yAxis2, xlab = "", ylab = "", y2lab = "", 
     ## add extra space to right margin of plot within frame
     par(mar=c(5, 5, 4, 6) + 0.1)
     ## Plot first set of data and draw its axis
-    plot(xAxis, yAxis, pch = 16, axes = FALSE, ylim = range(yAxis), xlab= "", ylab = "", 
-         type = "b", col = "black", main = main)
-    axis(2, ylim = range(yAxis), col = "black", las=1)  ## las=1 makes horizontal labels
+    plot(xAxis, yAxis, pch = 16, axes = FALSE, ylim = range(yAxis), xlab= "", 
+         ylab = "", type = "b", col = "black", main = main)
+    axis(2, ylim = range(yAxis), col = "black", las=1)  
     mtext(ylab, side = 2, line = 4)
     box()
     ## Allow a second plot on the same graph
@@ -148,7 +150,8 @@ leftJoinByRowNames <- function(x, y, keepAll = F){
 # Read a BEDPE file and transform base-0 coordinates to base-1
 readBEDPE <- function(fileName, idAsRowNames = T){
     tmp <- read.delim(fileName, header = F, stringsAsFactors = F)
-    colnames(tmp) <- c("chr1", "start1", "end1", "chr2", "start2", "end2", "name", "score", "strand1", "strand2")
+    colnames(tmp) <- c("chr1", "start1", "end1", "chr2", "start2", "end2", 
+                       "name", "score", "strand1", "strand2")
     tmp$start1 <- tmp$start1 + 1
     tmp$start2 <- tmp$start2 + 1
     if(idAsRowNames){rownames(tmp) <- tmp$name}
@@ -158,7 +161,8 @@ readBEDPE <- function(fileName, idAsRowNames = T){
 # Read BedPE file for getting read counts (strand specific)
 readBEDPE3 <- function(fileName){
     tmp <- read.delim(fileName, header = F, stringsAsFactors = F)
-    colnames(tmp) <- c("chr", "start_r1", "end_r1", "start_r2", "end_r2", "strand")
+    colnames(tmp) <- c("chr", "start_r1", "end_r1", "start_r2", "end_r2", 
+                       "strand")
     tmp$start_r1 <- tmp$start_r1 + 1
     tmp$start_r2 <- tmp$start_r2 + 1
     return(tmp)
@@ -169,8 +173,10 @@ exonBlockGen <- function(iGene, geneAnnot){
     iStart <- geneAnnot[iGene,]$start
     iEnd <- geneAnnot[iGene,]$end
     iStrand <- geneAnnot[iGene,]$strand
-    tmpA <- geneAnnot[iGene,]$blockStarts %>% strsplit(split = ",") %>% unlist() %>% as.numeric()
-    tmpB <- geneAnnot[iGene,]$blockSizes %>% strsplit(split = ",") %>% unlist() %>% as.numeric()
+    tmpA <- geneAnnot[iGene,]$blockStarts %>% strsplit(split = ",") %>% 
+            unlist() %>% as.numeric()
+    tmpB <- geneAnnot[iGene,]$blockSizes %>% strsplit(split = ",") %>% 
+            unlist() %>% as.numeric()
     iBlocks <- sapply(1:length(tmpA), function(i){
         c(tmpA[i],(tmpA[i] + tmpB[i] -1))
     }) %>% t
@@ -622,5 +628,6 @@ ggScattLinePlot <- function(x, y, title = "", xLab = "", yLab = "", alpha = 1){
 
 
 # Load/install dependencies
-CRAN_packs <- c("magrittr", "parallel", "optparse", "plyr", "ggplot2", "grid", "gtools", "reshape2")
+CRAN_packs <- c("magrittr", "parallel", "optparse", "plyr", "ggplot2", "grid",
+                "gtools", "reshape2", "EnvStats")
 sapply(CRAN_packs, function(x) installLoad_CRAN(x))
