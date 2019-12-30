@@ -270,7 +270,8 @@ getCountData <- function(cluster, dat, GENES, geneAnnot, minInserts, maxInsLen){
 # Load/install CRAN packages
 installLoad_CRAN <- function(package){
     if (!require(package, character.only = T)) {
-        install.packages(package, dependencies = TRUE)
+        install.packages(package, dependencies = TRUE, 
+                         repos="http://cran.us.r-project.org")
         library(package, character.only = T, quietly = T)
     }
 }
