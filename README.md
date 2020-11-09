@@ -2,6 +2,12 @@
 
 [![DOI](https://zenodo.org/badge/178392100.svg)](https://zenodo.org/badge/latestdoi/178392100)
 
+### Citation
+
+If you use this code, please cite it as: Miguel Angel García-Campos. (2019, December 17).
+SchwartzLab/mazter_mine: Minor update (Version v1.0.1). Cell. Zenodo. http://doi.org/10.5281/zenodo.3581426
+
+## Description
 
 MAZTER-mine is a computational pipeline to analyze MAZTER-seq 
 ([Garcia-Campos et al., 2019](https://www.cell.com/cell/fulltext/S0092-8674(19)30676-2)) 
